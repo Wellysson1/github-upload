@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 3</title>
+	<script type="text/javascript">
+
+	function Validar() 
+	{
+		if (document.getElementById("Masculino").checked == true) 
+		{
+            sexo = "Masculino"
+        }
+		else 
+		{
+            sexo = "Feminino"
+        }
+    
+		pessoaObjeto = 
+		{
+            nome: document.getElementById("nome").value, email: document.getElementById("e-mail").value, telefone: document.getElementById("telefone").value, cpf: document.getElementById("CPFCNPJ").value,
+            sexo: sexo, estado: document.getElementById("estado").value, endereco: document.getElementById("endereço").value
+		};
+
+		for(i in pessoaObjeto) 
+		{
+            alert(pessoaObjeto[i]);
+        }
+
+        return confirm("Deseja fazer o cadastro?")
+    }
+	</script>
+</head>
+<style>
+	.container 
+	{
+		width: 400px;
+		height: 822px;
+		margin: 105px auto;
+		background-image: url(https://www.betha.com.br/static/img-home-tecnologia-640ac63c795e8193e1b5ffc84bc72ed2.jpg);
+		border-radius: 15px;
+		box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.789);
+		font-size: large;
+	}
+	       .botao {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 18px;
+            width: 10%;
+            height: 33px;
+            border-radius: 7px;
+            border: white;
+            background: rgb(110, 153, 247);
+            cursor: pointer;
+			align="center";
+			
+        }
+
+        .botao:hover {
+            background: rgb(110, 153, 247);
+            color: rgb(255, 255, 255);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.767)
+        }
+</style>
+
+<body style="background-color: #f0f1f3; color: #fff; font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+	<div class="container">
+		<h1 align="center">Preencha seus dados de acordo com o pedido!</h1>
+		
+		<form onsubmit="return Validar()" align="center">
+			<b>Nome</b><br>
+			<input type="text" name="nome" id="nome" required="required" maxlength="80" style="width: 198px;height: 27px;border-style: outset; font-size: medium;">
+			<br><br>
+			
+			<b>e-mail</b><br> 
+			<input type="email" name="e-mail" id="e-mail" required="required" maxlength="100" style="width: 198px;height: 27px;border-style: outset; font-size: medium;"><br><br>
+			
+			<b>Telefone</b><br>
+			<span style="font-size: small; color: crimson;"><b>Somente números</b></span><br> 
+			<input type="tel" name="telefone" id="telefone" required="required" minlength="8" maxlength="11" style="width: 198px;height: 27px;border-style: outset; font-size: medium;"><br><br>
+			
+			<b>CPF ou CNPJ</b><br>
+			<span style="font-size: small; color: crimson;"><b>Somente números</b></span><br> 
+			<input type="text" name="CPF" id="CPFCNPJ"  minlength="11" maxlength="14" required="required" style="width: 198px;height: 27px;border-style: outset; font-size: medium;"><br><br>
+			
+			<b>Sexo</b><br>
+			<input type="radio" name="sexo" id="Masculino" value="M" required="required">
+            <label for="Masculino"><b>Masculino</b></label><br>
+            <input type="radio" name="sexo" id="Feminino" value="F" required="required">
+            <label for="Feminino"><b>Feminino</b></label><br><br>
+			
+			<b>Endereço</b><br> 
+			<input type="text" name="endereço" id="endereço" required="required" minlength="10"	maxlength="120" style="width: 198px;height: 27px;border-style: outset; font-size: medium;"><br><br>
+			
+			<b>Estado</b><br>
+			<select name="estado" id="estado" required="required" style="width: 198px;height: 27px;border-style: outset; font-size: medium;">
+				<option></option>
+				<option value="Acre">Acre</option>
+				<option value="Alagoas">Alagoas</option>
+				<option value="Amapá">Amapá</option>
+				<option value="Amazonas">Amazonas</option>
+				<option value="Bahia">Bahia</option>
+				<option value="Ceará">Ceará</option>
+				<option value="Espírito Santo">Espírito Santo</option>
+				<option value="Goiás">Goiás</option>
+				<option value="Maranhão">Maranhão</option>
+				<option value="Mato Grosso">Mato Grosso</option>
+				<option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+				<option value="Minas Gerais">Minas Gerais</option>
+				<option value="Pará">Pará</option>
+				<option value="Paraíba">Paraíba</option>
+				<option value="Paraná">Paraná</option>
+				<option value="Pernabuco">Pernabuco</option>
+				<option value="Piauí">Piauí</option>
+				<option value="Rio de Janeiro">Rio de Janeiro</option>
+				<option value="Rio Grande do Norte">Rio Grande do Norte</option>
+				<option value="Rio Grande do Sul">Rio Grande do Sul</option>
+				<option value="Rodonia">Rodonia</option>
+				<option value="Roraima">Roraima</option>
+				<option value="Santa Catarina">Santa Catarina</option>
+				<option value="São Paulo">São Paulo</option>
+				<option value="Sergipe">Sergipe</option>
+				<option value="Tocantins">Tocantins</option>
+				<option value="Distrito Federal">Distrito Federal</option>
+					
+			</select>
+			<br><br><br>
+
+			<input class="botao" type="submit" name="sub" id="sub" style="width: 150px;height: 27px;border-style: outset; font-size: medium;">
+		</form>
+	</div>
+</body>
+</html>
